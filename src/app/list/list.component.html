@@ -1,0 +1,23 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="input-group">
+            <input type="text" [(ngModel)]="task" class="form-control" placeholder="Task">
+            <button class="btn btn-outline-info" type="button" (click)="addTask()">
+              <fa-icon [icon]="faPlusCircle"></fa-icon>
+            </button>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between"
+          *ngFor="let list of taskList; let i = index" [ngClass]="isComplete ? 'task-completed' : 'reset-task'"><span>:)</span>{{list.task}} <span class="badge bg-danger shadow">
+            <fa-icon [icon]="deleteButton"></fa-icon>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
