@@ -12,7 +12,7 @@
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between"
-          *ngFor="let list of taskList; let i = index" [ngClass]="isComplete ? 'task-completed' : 'reset-task'"><span>:)</span>{{list.task}} <span class="badge bg-danger shadow">
+          *ngFor="let list of taskList; let i = index" [ngClass]="isComplete ? 'task-completed' : 'reset-task'"><span>:)</span>{{list.task}} <span class="badge bg-danger shadow" (click)="deleteTask(i)">
             <fa-icon [icon]="deleteButton"></fa-icon>
           </span>
         </li>
